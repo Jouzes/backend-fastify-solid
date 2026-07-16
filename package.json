@@ -1,0 +1,39 @@
+{
+  "name": "api-backend-fastify-solid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start:dev": "tsx watch server.ts",
+    "build": "tsup src --out-dir build",
+    "start": "node build/serverjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jouzes/backend-fastify-solid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Jouzes/backend-fastify-solid/issues"
+  },
+  "homepage": "https://github.com/Jouzes/backend-fastify-solid#readme",
+  "devDependencies": {
+    "@babel/core": "^8.0.1",
+    "@babel/eslint-parser": "^8.0.1",
+    "@babel/preset-typescript": "^8.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^26.1.1",
+    "eslint": "^10.7.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.1",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "fastify": "^5.10.0"
+  }
+}
