@@ -2,7 +2,7 @@ import type { FastifyRequest, FastifyReply } from "fastify";
 import z from "zod";
 import {prisma} from "../../lib/prisma.js";
 
-export async function registerGym (req: FastifyRequest, res: FastifyReply) {
+export async function registerGym(req: FastifyRequest, res: FastifyReply) {
   const registerBodySchema = z.object({
     title: z.string(),
     latitude: z.coerce.number(),

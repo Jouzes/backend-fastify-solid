@@ -1,5 +1,5 @@
-import {app} from "./src/@app.js";
-import {env} from "./src/env/validateEnv.js";
+import {app} from "./app.js";
+import {env} from "./env/env.js";
 
 app.listen({host: "0.0.0.0", port: env.PORT}).then(() => {
   console.log("server on");
