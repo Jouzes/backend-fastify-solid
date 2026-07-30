@@ -27,7 +27,8 @@ model User {
 model CheckIn {
   id String @id @default(uuid())
   created_at DateTime @default(now())
-  is_validated Boolean
+  is_validated Boolean @default(false)
+  validated_at DateTime?
   user_id String
   gym_id String
 

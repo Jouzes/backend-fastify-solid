@@ -30,7 +30,7 @@ describe("get user profile test", () => {
   });
 
   it("should not be able to get user profile with wrong id", async () => {  
-    expect(() => getUserProfile.execute({userId: "sei la n existe"}),
+    await expect(() => getUserProfile.execute({userId: "sei la n existe"}),
     ).rejects.toBeInstanceOf(ResourceNotFoundError);
   });
 });

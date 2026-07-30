@@ -35,7 +35,7 @@ describe("Register user test", () => {
 
     await registerUser.create(userData);
 
-    await expect(registerUser.create(userData)).rejects.toBeInstanceOf(
+    expect(registerUser.create(userData)).rejects.toBeInstanceOf(
       UserAlreadyExistsError
     );
     expect(usersRepository.items).toHaveLength(1);
