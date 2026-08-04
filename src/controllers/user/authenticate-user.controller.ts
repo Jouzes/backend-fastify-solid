@@ -12,12 +12,14 @@ export async function authenticateUserHttp(req: FastifyRequest, res: FastifyRepl
   const {email, password} = authenticateBodySchema.parse(req.body);
   try {
     const authenticateUser = makeAuthenticateUsers();
-    await authenticateUser.execute({email, password});
+    const {user} = await authenticateUser.execute({email, password});
+    const token = await res.jwtSign({}, {sign: {sub: user.id}});
+
+    return res.status(200).send({token});
   } catch (error) {
     if (error instanceof InvalidCredentialError) {
       return res.status(400).send();
     }
     throw error;
   }
-  return res.status(200).send({message: "Login concluído com sucesso!"});
 }
