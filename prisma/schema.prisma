@@ -14,7 +14,8 @@ datasource db {
 
 model User {
   id String @id @default(uuid())
-  name String 
+  name String
+  role Role @default(MEMBER)
   email String @unique
   password_hash String
   created_at DateTime @default(now())
@@ -49,4 +50,9 @@ model Gym {
   CheckIns CheckIn[]
 
   @@map("gyms")
+}
+
+enum Role {
+  ADMIN
+  MEMBER
 }
