@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [tsConfigPaths()],
   test:   {
     dir: "src",
-    workspace: [{
+    projects: [{
       extends: true,
       test: {
         name: "unit",
