@@ -28,7 +28,7 @@ describe("Search gyms by query", () => {
     });
 
     const {gyms} = await searchGyms.create({
-      query: "acadeia",
+      query: "academia",
       page: 1
     });
     expect(gyms).toHaveLength(1);
@@ -51,6 +51,6 @@ describe("Search gyms by query", () => {
       page: 2
     });
     expect(gyms).toHaveLength(2);
-    expect(gyms).toEqual([expect.objectContaining({title: "academia"}), expect.objectContaining({title: "academia"})]);
+    expect(gyms).toEqual([expect.objectContaining({title: "gym teste-21"}), expect.objectContaining({title: "gym teste-22"})]);
   });
 });

@@ -30,9 +30,9 @@ describe("validate checkIn test", () => {
   });
 
   it("should be able to not validate the checkIns", async () => {
-    await expect(() => {
-      validateCheckInUser.create({checkInId: "inexistent id"});
-    }).rejects.toBeInstanceOf(ResourceNotFoundError);
+    await expect(
+      validateCheckInUser.create({checkInId: "inexistent id"})
+    ).rejects.toBeInstanceOf(ResourceNotFoundError);
   });
 
   it("should not be able to validate the checkIn after 20 minutes", async () => {
@@ -46,6 +46,8 @@ describe("validate checkIn test", () => {
     const timer = 1000 * 60 * 21;
     vi.advanceTimersByTime(timer);
     
-    await expect(() => validateCheckInUser.create({checkInId: createdCheckIn.id})).rejects.toBeInstanceOf(LateCheckInValidationError);
+    await expect(
+      validateCheckInUser.create({checkInId: createdCheckIn.id})
+    ).rejects.toBeInstanceOf(LateCheckInValidationError);
   });
 });
