@@ -17,7 +17,8 @@ export default defineConfig({
       test: {
         name: "e2e",
         dir: "src/controllers",
-        environment: "./prisma/vitest-environment-prisma/prisma-test-environment.ts"
+        environment: "./prisma/vitest-environment-prisma/prisma-test-environment.ts",
+        fileParallelism: false
       }
     }]
   }

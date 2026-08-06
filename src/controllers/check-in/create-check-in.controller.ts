@@ -12,7 +12,7 @@ export async function createCheckInHttp(req: FastifyRequest, res: FastifyReply) 
   });
 
   const {latitude, longitude} = checkInBodySchema.parse(req.body);
-  const {gymId} = checkInParamsSchema.parse(req.body);
+  const {gymId} = checkInParamsSchema.parse(req.params);
 
   const createCheckInService = makeCheckInUser();
   
@@ -23,5 +23,5 @@ export async function createCheckInHttp(req: FastifyRequest, res: FastifyReply) 
     userLongitude: longitude
   });
   
-  return res.status(200).send();
+  return res.status(201).send();
 }

@@ -11,13 +11,13 @@ describe("Load profile user e2e test", () => {
   afterAll(() => {});
 
   it("should be able to get user profile", async () => {
-    const {token} = await createAndAuthenticateUser(app);
+    const {token, user} = await createAndAuthenticateUser(app);
 
     const response = await request(app.server).get("/me").set("Authorization",`Bearer ${token}`).send();
 
     expect(response.statusCode).toEqual(200);
     expect(response.body.user).toEqual(expect.objectContaining({
-      email: "teste@auto.com.br"
+      email: user.email
     }));
   });
 });

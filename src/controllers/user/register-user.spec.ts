@@ -14,7 +14,7 @@ describe("Register user e2e test", () => {
       .post("/users")
       .send({
         name: "cadastro teste auto",
-        email: "teste@auto.com.br",
+        email: "john.doe@example.com",
         password: "123456"
       });
     expect(response.statusCode).toEqual(201);

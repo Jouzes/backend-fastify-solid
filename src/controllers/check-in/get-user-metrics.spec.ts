@@ -12,9 +12,7 @@ describe("Get user metrics e2e test", () => {
   afterAll(() => {});
 
   it("should be able to get the count of check-ins", async () => {
-    const {token} = await createAndAuthenticateUser(app);
-
-    const user = await prisma.user.findFirstOrThrow();
+    const {token, user} = await createAndAuthenticateUser(app);
 
     const gym = await prisma.gym.create({
       data: {
